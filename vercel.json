@@ -10,7 +10,7 @@
     },
     {
       "src": "/dist/apps/frontend/*",
-      "use": "@now/static"
+      "use": "@vercel/static"
     }
   ],
   "routes": [
