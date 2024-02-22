@@ -8,7 +8,7 @@
   "framework": null,
   "builds": [
     {
-      "src": "app/backend/src/main.ts",
+      "src": "apps/backend/src/main.ts",
       "use": "@vercel/node"
     },
     {
@@ -19,7 +19,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app/backend/src/main.ts",
+      "dest": "apps/backend/src/main.ts",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
     }
   ]
