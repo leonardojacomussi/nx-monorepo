@@ -9,7 +9,9 @@ import { join } from 'path';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../../apps/frontend/'),
+      rootPath: process.env.NODE_ENV === 'development'
+        ? join(__dirname, '../../../apps/frontend/dist')
+        : join(__dirname, '../../apps/frontend/dist'),
       exclude: ['api/*'],
     }),
   ],
