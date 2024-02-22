@@ -25,7 +25,6 @@ const common_1 = __webpack_require__(1);
 const app_controller_1 = __webpack_require__(5);
 const app_service_1 = __webpack_require__(6);
 const serve_static_1 = __webpack_require__(7);
-const path_1 = __webpack_require__(8);
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -33,7 +32,7 @@ exports.AppModule = AppModule = tslib_1.__decorate([
     (0, common_1.Module)({
         imports: [
             serve_static_1.ServeStaticModule.forRoot({
-                rootPath: (0, path_1.join)(__dirname, '..', '..', '..', 'apps', 'frontend', 'dist'),
+                rootPath: 'apps/frontend/dist',
                 exclude: ['api/*'],
             }),
         ],
@@ -142,12 +141,6 @@ exports.AppService = AppService = tslib_1.__decorate([
 /***/ ((module) => {
 
 module.exports = require("@nestjs/serve-static");
-
-/***/ }),
-/* 8 */
-/***/ ((module) => {
-
-module.exports = require("path");
 
 /***/ })
 /******/ 	]);

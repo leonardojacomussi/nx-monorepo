@@ -9,7 +9,7 @@ import { join } from 'path';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..', '..', 'apps', 'frontend', 'dist'),
+      rootPath: 'apps/frontend/dist',
       exclude: ['api/*'],
     }),
   ],
