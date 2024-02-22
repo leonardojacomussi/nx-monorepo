@@ -3,20 +3,22 @@
   "github": {
     "enabled": true
   },
+  "buildCommand": "npx nx build frontend --prod && npx nx serve backend --prod",
+  "framework": null,
   "builds": [
     {
-      "src": "/dist/apps/backend/main.js",
+      "src": "app/backend/src/main.ts",
       "use": "@vercel/node"
     },
     {
-      "src": "/dist/apps/frontend/*",
-      "use": "@vercel/static"
+      "src": "dist/apps/frontend/*",
+      "use": "@now/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/dist/apps/backend/main.js",
+      "dest": "app/backend/src/main.ts",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
     }
   ]
