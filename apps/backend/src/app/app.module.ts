@@ -6,12 +6,16 @@ import { AppService } from './app.service';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
+const rootPath = process.env.NODE_ENV === 'development'
+  ? join(__dirname, '../../../apps/frontend/dist')
+  : join(__dirname, '../../apps/frontend/dist');
+
+console.log('rootPath:', rootPath);
+
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: process.env.NODE_ENV === 'development'
-        ? join(__dirname, '../../../apps/frontend/dist')
-        : join(__dirname, '../../apps/frontend/dist'),
+      rootPath: join(__dirname, '../../apps/frontend/dist'),
       exclude: ['api/*'],
     }),
   ],
