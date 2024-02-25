@@ -11,15 +11,15 @@ import { join } from 'path';
 //   : join(__dirname, '../../apps/frontend/dist');
 
 const rootPath = process.env.NODE_ENV === 'development'
-  ? join(__dirname, '../../../apps/frontend/dist')
-  : join(__dirname, '../../frontend/dist');
+  ? join(__dirname, '../../../apps/frontend/dist/')
+  : join(__dirname, '../../../frontend/dist/');
 
 console.log('rootPath:', rootPath);
 
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../../frontend/'),
+      rootPath: rootPath,
       exclude: ['api/*'],
     }),
   ],
