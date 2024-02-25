@@ -6,6 +6,7 @@
   "buildCommand": "npx nx build frontend --prod && npx nx serve backend --prod",
   "installCommand": "npm install",
   "framework": null,
+  "outputDirectory": "dist",
   "builds": [
     {
       "src": "apps/backend/src/main.ts",
